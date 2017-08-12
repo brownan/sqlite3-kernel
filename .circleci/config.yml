@@ -20,7 +20,7 @@ jobs:
       - run: 
           command: |
             . venv/bin/activate
-            echo "Linting"
+            cd ~/sqlite3-kernel
             flake8
       - store_artifacts:
           path: test-reports/
