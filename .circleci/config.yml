@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/sqlite3-kernel
+    docker:
+      - image: python:3.6.1
+    steps:
+      - checkout
+      - restore_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "requirements-dev.txt" }}
+      - run:
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements-dev.txt
+      - save_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "requirements-dev.txt" }}
+          paths:
+            - "venv"
+      - run: 
+          command: |
+            . venv/bin/activate
+            cd ~/sqlite3-kernel
+            flake8
+      - store_artifacts:
+          path: test-reports/
+          destination: tr1
