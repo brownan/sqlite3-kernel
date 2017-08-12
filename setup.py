@@ -6,6 +6,9 @@ setup(
     packages=find_packages(),
     description="SQLite3 Jupyter Kernel",
     url="https://github.com/brownan/sqlite3_kernel",
+    install_requires=[
+        'pexpect>=4.0'
+    ],
     classifiers=[
         'Framework :: IPython',
         'License :: OSI Approved :: BSD License',
