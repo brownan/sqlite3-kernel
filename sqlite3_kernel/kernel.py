@@ -15,8 +15,13 @@ class Sqlite3REPL(replwrap.REPLWrapper):
         super().__init__(
             "sqlite3",
             "sqlite> ",
-            ".prompt {} {}",
+            prompt_change=None,
+            continuation_prompt="   ...> "
         )
+
+        # This is required to force suppression of command echo.
+        self.child.setecho(False)
+
     def run_command(self, command, timeout=-1):
         """Same as parent class but on continuations, send a semicolon to
         terminate the command"""
@@ -41,6 +46,7 @@ class Sqlite3REPL(replwrap.REPLWrapper):
                 raise ValueError("Continuation prompt found - input was incomplete:\n"
                                  + command)
         return u''.join(res + [self.child.before])
+
 
 class Sqlite3Kernel(Kernel):
     implementation = 'sqlite3_kernel'
