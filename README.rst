@@ -22,3 +22,8 @@ Pexpect's docs on the `replwrap module
 <http://pexpect.readthedocs.org/en/latest/api/replwrap.html>`_
 
 Based on the `Bash kernel <https://github.com/takluyver/bash_kernel>`_
+
+Note: this was just a quick and dirty experiment in writing Jupyter kernels.
+I decided to publish it on Github in the hopes that others find it useful.
+It may not work for everyone, but feel free to use this as a base for
+something more robust.
