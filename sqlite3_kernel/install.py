@@ -9,7 +9,7 @@ from IPython.utils.tempdir import TemporaryDirectory
 kernel_json = {"argv":[sys.executable,"-m","sqlite3_kernel", "-f", "{connection_file}"],
  "display_name":"Sqlite3",
  "language":"sqlite3",
- "codemirror_mode":"shell",
+ "codemirror_mode":"magic_text/x-mssql",
  "env":{"PS1": "$"}
 }
 

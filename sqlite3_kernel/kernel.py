@@ -66,8 +66,8 @@ class Sqlite3Kernel(Kernel):
         return self._banner
 
     language_info = {'name': 'sqlite3',
-                     'codemirror_mode': 'shell',
-                     'mimetype': 'text/x-sh',
+                     'codemirror_mode': 'sql',
+                     'mimetype': 'text/x-sql',
                      'file_extension': '.sql'}
 
     def __init__(self, **kwargs):
