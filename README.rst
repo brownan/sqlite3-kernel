@@ -1,6 +1,6 @@
 A simple Jupyter kernel for SQLite3
 
-This requires IPython 3.
+This requires IPython 3 and the sqlite3 command line tool to be installed.
 
 To install::
 
